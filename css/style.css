@@ -50,8 +50,4 @@ select:focus-visible,
 option:focus-visible {
   outline: none;
   box-shadow: 0 0 0 3px rgba(148, 163, 184, 0.2);
-}
-
-select {
-  background: rgba(148, 163, 184, 0.1);
 }/*# sourceMappingURL=style.css.map */

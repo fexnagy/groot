@@ -54,7 +54,7 @@ function getPriorityClass($priority)
 {
     switch ($priority) {
         case 'high':
-            return 'bg-indigo-400 text-indigo-800';
+            return 'bg-rose-400 text-rose-800';
         case 'medium':
             return 'bg-orange-400 text-orange-800';
         case 'low':
@@ -136,10 +136,10 @@ function getPriorityClass($priority)
                                         <?php } ?>
                                     </h3>
                                     <?php foreach ($tasks as $task) { ?>
-                                        <div id="contextMenu" style="display: none; position: absolute; background-color: white; border: 1px solid #ccc;">
-                                            <div onclick="deleteCard();">Delete</div>
-                                        </div>
                                         <div class="card max-w-full bg-slate-800 rounded-3xl shadow-md overflow-hidden mb-4 ring-2 ring-slate-400/25" oncontextmenu="showContextMenu(event); return false;">
+                                            <div id="deleteBTN" class="absolute">
+                                                <div onclick="deleteCard(<?= $task['id'] ?>);">Delete</div>
+                                            </div>
                                             <div class="md:flex">
                                                 <div class="p-8 mb-8 md:mb-0 w-full">
                                                     <a href="#" class="task-title-link hover:line-through text-slate-100 hover:text-slate-300" data-task-id="<?= $task['id'] ?>">
@@ -171,7 +171,7 @@ function getPriorityClass($priority)
                                             <div class="md:flex">
                                                 <div class="p-8 mb-8 md:mb-0 w-full">
                                                     <?php if ($completedTask['status'] == 'done') { ?>
-                                                        <span class="line-through"><?= $completedTask['title'] ?></span>
+                                                        <span class="line-through text-slate-300 select-none"><?= $completedTask['title'] ?></span>
                                                     <?php } else { ?>
                                                         <a href="#" class="task-title-link <?= $taskClass ?>" data-task-id="<?= $completedTask['id'] ?>">
                                                             <?= $completedTask['title'] ?>
@@ -198,13 +198,13 @@ function getPriorityClass($priority)
         </div>
     </section>
 
-    <footer class="bg-white">
+    <footer class="bg-slate-700 ring-4 ring-slate-400/25">
         <div class="mx-auto max-w-7xl px-6 py-12 md:flex md:items-center md:justify-between lg:px-8">
             <div class="flex justify-center space-x-6 md:order-2">
-                <div class="text-slate-600 select-none">
+                <div class="text-slate-300 select-none">
                     Github repo <span aria-hidden="true">→</span>
                 </div>
-                <a href="https://github.com/fexnagy/groot" class="text-slate-400 hover:text-indigo-500 transition duration-150 ease-in-out" target="_blank">
+                <a href="https://github.com/fexnagy/groot" class="text-slate-300 hover:text-slate-400" target="_blank">
                     <span class="sr-only">GitHub</span>
                     <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                         <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
@@ -212,7 +212,7 @@ function getPriorityClass($priority)
                 </a>
             </div>
             <div class="mt-8 md:order-1 md:mt-0">
-                <p class="text-center text-xs leading-5 text-slate-500">
+                <p class="text-center text-sm text-slate-300">
                     &copy; 2023 Groot, Inc. All rights reserved.
                 </p>
             </div>
@@ -231,26 +231,26 @@ function getPriorityClass($priority)
             <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
 
             <!-- Task Modal Content -->
-            <div class="inline-block align-bottom bg-slate-700 rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg px-12">
+            <div class="inline-block align-bottom bg-slate-700 rounded-lg text-left overflow-hidden shadow-inner transform transition-all sm:my-8 sm:align-middle sm:max-w-lg px-12">
                 <div class="px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
                     <div class="sm:flex sm:items-start p-4">
                         <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
-                            <h3 class="text-xl leading-6 font-bold text-slate-900 pb-8" id="modal-title">
+                            <h3 class="text-xl leading-6 font-bold text-slate-100 pb-8" id="modal-title">
                                 Add task
                             </h3>
                             <div class="mt-2">
                                 <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
                                     <div class="mb-4">
-                                        <label for="title" class="block text-slate-700 text-sm font-bold mb-2">Title</label>
-                                        <input minlength="5" maxlength="50" type="text" id="title" name="title" class="appearance-none border rounded w-full py-2 px-3 text-slate-700" required>
+                                        <label for="title" class="block text-slate-100 text-sm font-bold mb-2">Title</label>
+                                        <input minlength="3" maxlength="25" type="text" id="title" name="title" class="appearance-none border rounded w-full py-2 px-3 text-slate-700 bg-slate-200" required>
                                     </div>
                                     <div class="mb-4">
-                                        <label for="description" class="block text-slate-700 text-sm font-bold mb-2">Description</label>
-                                        <textarea minlength="5" maxlength="255" id="description" name="description" class="appearance-none border rounded w-full py-2 h-24 px-3 text-slate-700" required></textarea>
+                                        <label for="description" class="block text-slate-100 text-sm font-bold mb-2">Description</label>
+                                        <textarea minlength="3" maxlength="50" id="description" name="description" class="appearance-none border rounded w-full py-2 h-24 px-3 text-slate-700 bg-slate-200" required></textarea>
                                     </div>
                                     <div class="mb-4">
-                                        <label for="priority" class="block text-slate-700 text-sm font-bold mb-2">Priority</label>
-                                        <select id="priority" name="priority" class="appearance-none border rounded w-full py-2 px-3 text-slate-700" required>
+                                        <label for="priority" class="block text-slate-100 text-sm font-bold mb-2">Priority</label>
+                                        <select id="priority" name="priority" class="appearance-none border rounded w-full py-2 px-3 text-slate-700 bg-slate-200" required>
                                             <option value="low">Low</option>
                                             <option value="medium" selected>Medium</option>
                                             <option value="high">High</option>

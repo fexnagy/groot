@@ -104,25 +104,36 @@ window.addEventListener("scroll", function () {
     }
 });
 
-function showContextMenu(event) {
-    event.preventDefault(); // Prevent the default context menu from appearing
-    const contextMenu = document.getElementById("contextMenu");
-    contextMenu.style.display = "block";
-    contextMenu.style.left = event.clientX + "px";
-    contextMenu.style.top = event.clientY + "px";
-}
+function deleteCard(taskId) {
+    const deleteBTN = document.getElementById("deleteBTN");
+    deleteBTN.style.display = "none";
 
-function deleteCard() {
-    const contextMenu = document.getElementById("contextMenu");
-    contextMenu.style.display = "none";
-
-    // Delete the card or perform your desired action here
+    // Delete the card from the UI
     const card = document.querySelector(".card");
     card.style.display = "none"; // For demonstration, hide the card
+
+    // Send an AJAX request to delete the task from the database
+    fetch("delete_task.php", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            taskId: taskId,
+        }),
+    })
+        .then((response) => {
+            if (!response.ok) {
+                console.error("Error deleting task from the database");
+            }
+        })
+        .catch((error) => {
+            console.error("Network error:", error);
+        });
 }
 
 // Close the context menu when clicking anywhere in the document
 document.addEventListener("click", function (event) {
-    const contextMenu = document.getElementById("contextMenu");
-    contextMenu.style.display = "none";
+    const deleteBTN = document.getElementById("deleteBTN");
+    deleteBTN.style.display = "none";
 });
