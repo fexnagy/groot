@@ -36,19 +36,22 @@ label {
 
 a,
 button,
-input {
+input,
+textarea,
+select,
+option {
   transition: all 0.1s ease-in-out;
 }
 a:focus-visible,
 button:focus-visible,
-input:focus-visible {
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+option:focus-visible {
   outline: none;
   box-shadow: 0 0 0 3px rgba(148, 163, 184, 0.2);
 }
 
-input:focus,
-textarea:focus,
-select:focus,
-option:focus {
-  outline: 3px solid rgb(225, 29, 72);
+select {
+  background: rgba(148, 163, 184, 0.1);
 }/*# sourceMappingURL=style.css.map */

@@ -16,7 +16,7 @@
 
     <body>
         <nav
-            class="bg-slate-800 shadow sticky top-0 z-50 backdrop-blur-sm ring-2 ring-slate-400/25"
+            class="bg-slate-800 shadow sticky top-0 z-50 backdrop-blur-sm ring-4 ring-slate-400/25"
         >
             <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div class="flex h-16 justify-between">
@@ -55,8 +55,8 @@
                         </div>
                         <div class="hidden md:ml-6 md:flex md:space-x-8">
                             <a
-                                class="inline-flex items-center px-1 pt-1 text-md text-slate-400 hover:cursor-pointer"
-                                id="current"
+                                class="inline-flex items-center px-1 pt-1 text-md text-slate-500 hover:text-slate-400"
+                                href="index.php"
                                 >Home</a
                             >
                             <a
@@ -65,8 +65,8 @@
                                 >Tasks</a
                             >
                             <a
-                                class="inline-flex items-center px-1 pt-1 text-md text-slate-500 hover:text-slate-400"
-                                href="blog.html"
+                                class="inline-flex items-center px-1 pt-1 text-md text-slate-400 hover:cursor-pointer"
+                                id="current"
                                 >Blog</a
                             >
                         </div>
@@ -88,18 +88,18 @@
             <div class="hidden" id="mobile-menu">
                 <div class="space-y-1 pb-3 pt-2">
                     <a
-                        class="block border-l-4 border-slate-500 bg-slate-700 text-slate-400 py-2 pl-3 pr-4 sm:pl-5 sm:pr-6 hover:cursor-pointer"
-                        id="current-mobile"
+                        class="block border-l-4 border-transparent py-2 pl-3 pr-4 text-slate-500 hover:border-slate-500 hover:bg-slate-700 hover:text-slate-400 sm:pl-5 sm:pr-6 hover:cursor-pointer"
+                        href="index.php"
                         >Home</a
                     >
                     <a
-                        href="tasks.php"
                         class="block border-l-4 border-transparent py-2 pl-3 pr-4 text-slate-500 hover:border-slate-500 hover:bg-slate-700 hover:text-slate-400 sm:pl-5 sm:pr-6"
+                        href="tasks.php"
                         >Tasks</a
                     >
                     <a
-                        href="blog.html"
-                        class="block border-l-4 border-transparent py-2 pl-3 pr-4 text-slate-500 hover:border-slate-500 hover:bg-slate-700 hover:text-slate-400 sm:pl-5 sm:pr-6"
+                        class="block border-l-4 border-slate-500 bg-slate-700 py-2 pl-3 pr-4 text-slate-400 hover:border-slate-500 hover:bg-slate-700 hover:text-slate-400 sm:pl-5 sm:pr-6"
+                        id="current-mobile"
                         >Blog</a
                     >
                 </div>

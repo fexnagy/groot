@@ -25,15 +25,15 @@ label
 
 a,
 button,
-input
+input,
+textarea,
+select,
+option
   transition: all .1s ease-in-out
   &:focus-visible
     outline: none
-      //slate box shadow
     box-shadow: 0 0 0 3px rgb(148, 163, 184, .2)
 
-input:focus,
-textarea:focus,
-select:focus,
-option:focus
-  outline: 3px solid rgb(225 29 72)
+// change select bg color
+select
+  background: rgb(148, 163, 184, .1)
