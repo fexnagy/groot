@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+* {
+  font-family: "Inter", sans-serif;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::-moz-selection {
+  background: rgba(148, 163, 184, 0.2);
+  color: #94a3b8;
+}
+
+::selection {
+  background: rgba(148, 163, 184, 0.2);
+  color: #94a3b8;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+nav {
+  transition: all 0.3s ease-in-out;
+}
+
+a,
+img,
+label {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+a,
+button,
+input {
+  transition: all 0.1s ease-in-out;
+}
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(148, 163, 184, 0.2);
+}
+
+input:focus,
+textarea:focus,
+select:focus,
+option:focus {
+  outline: 3px solid rgb(225, 29, 72);
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap')
+
+*
+  font-family: 'Inter', sans-serif
+  text-decoration: none
+  margin: 0
+  padding: 0
+  webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+
+::selection
+  background: rgb(148, 163, 184, .2)
+  color: #94a3b8
+
+html
+  scroll-behavior: smooth
+
+nav
+  transition: all .3s ease-in-out
+
+a,
+img,
+label
+  user-select: none
+
+a,
+button,
+input
+  transition: all .1s ease-in-out
+  &:focus-visible
+    outline: none
+      //slate box shadow
+    box-shadow: 0 0 0 3px rgb(148, 163, 184, .2)
+
+input:focus,
+textarea:focus,
+select:focus,
+option:focus
+  outline: 3px solid rgb(225 29 72)
