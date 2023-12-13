@@ -138,7 +138,7 @@ function getPriorityClass($priority)
                                     <?php foreach ($tasks as $task) { ?>
                                         <div class="card max-w-full bg-slate-800 rounded-3xl shadow-md overflow-hidden mb-4 ring-2 ring-slate-400/25" oncontextmenu="showContextMenu(event); return false;">
                                             <div class="relative">
-                                                <div id="deleteBTN" class="absolute top-0 right-0 w-6 text-center m-8 bg-slate-500 text-slate-50 cursor-pointer rounded-full hover:bg-red-500 hover:cursor-pointer" onclick="deleteCard(<?= $task['id'] ?>);">✖</div>
+                                                <div id="deleteBTN" class="absolute top-0 mt-3 mr-3 right-0 w-6 opacity-50 text-center m-8 bg-slate-500 text-slate-50 cursor-pointer rounded-full hover:bg-red-500 hover:opacity-100 hover:cursor-pointer" onclick="deleteCard(<?= $task['id'] ?>);">✖</div>
                                             </div>
                                             <div class="md:flex">
                                                 <div class="p-8 mb-8 md:mb-0 w-full">

@@ -125,15 +125,12 @@ function deleteCard(taskId) {
         .then((response) => {
             if (!response.ok) {
                 console.error("Error deleting task from the database");
+            } else {
+                // Refresh the page after successfully deleting the task
+                location.reload();
             }
         })
         .catch((error) => {
             console.error("Network error:", error);
         });
 }
-
-// Close the context menu when clicking anywhere in the document
-document.addEventListener("click", function (event) {
-    const deleteBTN = document.getElementById("deleteBTN");
-    deleteBTN.style.display = "none";
-});
