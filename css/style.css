@@ -49,5 +49,5 @@ textarea:focus-visible,
 select:focus-visible,
 option:focus-visible {
   outline: none;
-  box-shadow: 0 0 0 3px rgba(148, 163, 184, 0.2);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.8);
 }/*# sourceMappingURL=style.css.map */

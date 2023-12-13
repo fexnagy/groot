@@ -148,7 +148,7 @@ function getPriorityClass($priority)
                                                     <p class="mt-2 mb-4 text-slate-400 truncate" title="<?= $task['description'] ?>">
                                                         <?= $task['description'] ?>
                                                     </p>
-                                                    <span class="relative z-10 top-2 float-left py-1.5 font-medium text-slate-400" title="Date added"><?= date('F j, Y', strtotime($task['created_at'])) ?></span>
+                                                    <span class="relative z-10 top-2 float-left py-1.5 font-medium text-slate-500" title="Date added"><?= date('F j, Y', strtotime($task['created_at'])) ?></span>
                                                     <?php
                                                     $priorityClass = getPriorityClass($task['priority']);
                                                     ?>
@@ -180,7 +180,7 @@ function getPriorityClass($priority)
                                                     <p class="mt-2 mb-4 text-slate-400 truncate line-clamp-3" title="<?= $completedTask['description'] ?>">
                                                         <?= $completedTask['description'] ?>
                                                     </p>
-                                                    <span class="relative z-10 top-2 float-left py-1.5 font-medium text-slate-400" title="Date added"><?= date('F j, Y', strtotime($completedTask['created_at'])) ?></span>
+                                                    <span class="relative z-10 top-2 float-left py-1.5 font-medium text-slate-500" title="Date added"><?= date('F j, Y', strtotime($completedTask['created_at'])) ?></span>
                                                     <?php
                                                     $priorityClass = getPriorityClass($completedTask['priority']);
                                                     ?>
@@ -242,15 +242,15 @@ function getPriorityClass($priority)
                                 <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
                                     <div class="mb-4">
                                         <label for="title" class="block text-slate-100 text-sm font-bold mb-2">Title</label>
-                                        <input minlength="3" maxlength="25" type="text" id="title" name="title" class="appearance-none border rounded w-full py-2 px-3 text-slate-700 bg-slate-200" required>
+                                        <input minlength="3" maxlength="25" type="text" id="title" name="title" class="appearance-none border rounded-md w-full py-2 px-3 text-slate-700 bg-slate-200" required>
                                     </div>
                                     <div class="mb-4">
                                         <label for="description" class="block text-slate-100 text-sm font-bold mb-2">Description</label>
-                                        <textarea minlength="3" maxlength="50" id="description" name="description" class="appearance-none border rounded w-full py-2 h-24 px-3 text-slate-700 bg-slate-200" required></textarea>
+                                        <textarea minlength="3" maxlength="50" id="description" name="description" class="appearance-none border rounded-md w-full py-2 h-24 px-3 text-slate-700 bg-slate-200" required></textarea>
                                     </div>
                                     <div class="mb-4">
                                         <label for="priority" class="block text-slate-100 text-sm font-bold mb-2">Priority</label>
-                                        <select id="priority" name="priority" class="appearance-none border rounded w-full py-2 px-3 text-slate-700 bg-slate-200" required>
+                                        <select id="priority" name="priority" class="appearance-none border rounded-md w-full py-2 px-3 text-slate-700 bg-slate-200" required>
                                             <option value="low">Low</option>
                                             <option value="medium" selected>Medium</option>
                                             <option value="high">High</option>
