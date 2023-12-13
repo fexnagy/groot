@@ -20,7 +20,7 @@ try {
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Groot - Task Manager</title>
-  <link rel="shortcut icon" href="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=400" type="image/x-icon" />
+  <link rel="shortcut icon" href="img/logo.png" type="image/x-icon" />
   <link rel="stylesheet" href="css/style.css" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="js/app.js" defer></script>
@@ -40,7 +40,7 @@ try {
             </button>
           </div>
           <div class="flex flex-shrink-0 items-center">
-            <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=400" alt="Groot UI" />
+            <img class="h-8 w-auto" src="img/logo.png" alt="Groot UI" draggable="false">
           </div>
           <div class="hidden md:ml-6 md:flex md:space-x-8">
             <a class="inline-flex items-center px-1 pt-1 text-md text-slate-400 hover:cursor-pointer" id="current">Home</a>
@@ -102,7 +102,7 @@ try {
           </div>
         </div>
         <div class="mt-20 sm:mt-24 md:mx-auto md:max-w-full lg:mx-0 lg:mt-0 lg:w-screen">
-          <div class="absolute inset-y-0 right-1/2 -z-10 -mr-10 w-[200%] skew-x-[-30deg] bg-slate-900 shadow-xl shadow-indigo-600/10 ring-1 ring-indigo-50 md:-mr-20 lg:-mr-36" aria-hidden="true"></div>
+          <div class="absolute inset-y-0 right-1/2 -z-10 -mr-10 w-[200%] skew-x-[-30deg] bg-slate-900 shadow-xl shadow-indigo-600/10 ring-4 ring-slate-400 md:-mr-20 lg:-mr-36" aria-hidden="true"></div>
           <div class="card hidden lg:block max-w-full mx-6 bg-slate-800 rounded-3xl shadow-md overflow-hidden mb-4 ring-2 ring-slate-400/25" oncontextmenu="showContextMenu(event); return false;">
             <div class="md:flex">
               <div class="p-8 mb-8 md:mb-0 w-full">
@@ -119,7 +119,7 @@ try {
           </div>
         </div>
       </div>
-      <div class="absolute inset-x-0 bottom-0 -z-10 h-24 bg-gradient-to-t from-slate-800/100 sm:h-32"></div>
+      <div class="absolute inset-x-0 bottom-0 -z-10 h-24 bg-gradient-to-t from-slate-800/100 sm:h-96"></div>
     </div>
   </section>
 
@@ -136,45 +136,42 @@ try {
           <div class="mt-10 grid max-w-xl grid-cols-1 gap-8 text-lg leading-8 text-slate-400 lg:max-w-none lg:grid-cols-2">
             <div>
               <p>
-                Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget
-                risus enim. Mattis mauris semper sed amet vitae sed turpis id.
-                Id dolor praesent donec est. Odio penatibus risus viverra
-                tellus varius sit neque erat velit. Faucibus commodo massa
-                rhoncus, volutpat. Dignissim sed eget risus enim. Mattis
-                mauris semper sed amet vitae sed turpis id.
+                Easily throw in your tasks through the user-friendly interface on the Tasks page.
+                You're in control with the title, description, and priority.
+                And guess what? It even slaps on the date when you added it, so you can keep
+                track of your productivity journey.
               </p>
               <p class="mt-8">
-                Et vitae blandit facilisi magna lacus commodo. Vitae sapien
-                duis odio id et. Id blandit molestie auctor fermentum
-                dignissim. Lacus diam tincidunt ac cursus in vel. Mauris
-                varius vulputate et ultrices hac adipiscing egestas.
+                Delete tasks if they're out of the picture or mark them as completed.
+                The completed ones get their VIP spot in the "Completed" column on the Tasks page.
+                They've earned it with their hard work.
               </p>
             </div>
             <div>
               <p>
-                Erat pellentesque dictumst ligula porttitor risus eget et
-                eget. Ultricies tellus felis id dignissim eget. Est augue
-                maecenas risus nulla ultrices congue nunc tortor.
+                But hey, the fun doesn't stop there! Check out our blog page for exciting
+                development updates about the website. It's where we spill the tea on
+                what's brewing behind the scenes.
               </p>
               <p class="mt-8">
-                Et vitae blandit facilisi magna lacus commodo. Vitae sapien
-                duis odio id et. Id blandit molestie auctor fermentum
-                dignissim. Lacus diam tincidunt ac cursus in vel. Mauris
-                varius vulputate et ultrices hac adipiscing egestas. Iaculis
-                convallis ac tempor et ut. Ac lorem vel integer orci.
+                Have questions or just want to chat? Swing by our Contact page.
+                We're all ears and ready to help out.
+                Your journey to organized chaos-free living starts here!
               </p>
             </div>
           </div>
           <div class="mt-10 flex">
-            <a href="#" class="rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-slate-100 shadow-sm hover:bg-indigo-400">Documentation</a>
+            <a href="#preview" class="text-sm font-semibold leading-6 text-slate-400 hover:text-slate-600">
+              Preview <span aria-hidden="true">→</span>
+            </a>
           </div>
         </div>
       </div>
-      <div class="relative overflow-hidden pt-16 lg:pt-20">
+      <div class="relative overflow-hidden pt-16 lg:pt-20" id="preview">
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
-          <img class="mb-[-8%] rounded-xl shadow-2xl" src="https://tailwindui.com/img/component-images/project-app-screenshot.png" alt="Task page" draggable="false" />
+          <img class="rounded-2xl shadow-2xl ring-4 ring-slate-400/25" src="img/task-page.jpg" alt="Task page" draggable="false">
           <div class="relative" aria-hidden="true">
-            <div class="absolute -inset-x-20 bottom-0 bg-gradient-to-t from-slate-800 pt-[50%]"></div>
+            <div class="absolute -inset-x-20 bottom-0 bg-gradient-to-t from-slate-800 pt-[15%]"></div>
           </div>
         </div>
       </div>

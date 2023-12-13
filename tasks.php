@@ -72,7 +72,7 @@ function getPriorityClass($priority)
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Groot - Task Manager</title>
-    <link rel="shortcut icon" href="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500" type="image/x-icon" />
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon" />
     <link rel="stylesheet" href="css/style.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="js/app.js" defer></script>
@@ -92,7 +92,7 @@ function getPriorityClass($priority)
                         </button>
                     </div>
                     <div class="flex flex-shrink-0 items-center">
-                        <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=400" alt="Groot UI" />
+                        <img class="h-8 w-auto" src="img/logo.png" alt="Groot UI" draggable="false">
                     </div>
                     <div class="hidden md:ml-6 md:flex md:space-x-8">
                         <a class="inline-flex items-center px-1 pt-1 text-md text-slate-500 hover:text-slate-400" href="index.php">Home</a>
@@ -137,8 +137,8 @@ function getPriorityClass($priority)
                                     </h3>
                                     <?php foreach ($tasks as $task) { ?>
                                         <div class="card max-w-full bg-slate-800 rounded-3xl shadow-md overflow-hidden mb-4 ring-2 ring-slate-400/25" oncontextmenu="showContextMenu(event); return false;">
-                                            <div id="deleteBTN" class="absolute">
-                                                <div onclick="deleteCard(<?= $task['id'] ?>);">Delete</div>
+                                            <div class="relative">
+                                                <div id="deleteBTN" class="absolute top-0 right-0 w-6 text-center m-8 bg-slate-500 text-slate-50 cursor-pointer rounded-full hover:bg-red-500 hover:cursor-pointer" onclick="deleteCard(<?= $task['id'] ?>);">✖</div>
                                             </div>
                                             <div class="md:flex">
                                                 <div class="p-8 mb-8 md:mb-0 w-full">
